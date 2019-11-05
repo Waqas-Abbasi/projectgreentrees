@@ -1,2 +1,2 @@
 # Project Green Trees
-Non-profit open source website for creating and organising tree plantation events
+Non-profit open source web app for creating and organising tree plantation events
