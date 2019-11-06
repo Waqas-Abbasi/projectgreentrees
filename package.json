@@ -1,0 +1,47 @@
+{
+  "name": "projectgreentrees",
+  "version": "1.0.0",
+  "description": "Non-profit open source web app for creating and organising tree plantation events",
+  "main": "index.js",
+  "dependencies": {
+    "@types/react": "^16.9.11",
+    "@types/react-dom": "^16.9.3",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.0",
+    "@babel/plugin-proposal-class-properties": "^7.7.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.6.2",
+    "@babel/preset-env": "^7.7.1",
+    "@babel/preset-react": "^7.7.0",
+    "@babel/preset-typescript": "^7.7.0",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.2.0",
+    "html-webpack-plugin": "^3.2.0",
+    "style-loader": "^1.0.0",
+    "tslint": "^5.20.1",
+    "tslint-immutable": "^6.0.1",
+    "typescript": "^3.7.2",
+    "webpack-dev-server": "^3.9.0"
+  },
+  "scripts": {
+    "bundle": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server --mode development --open --hot",
+    "build": "webpack --mode production",
+    "check-types": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Waqas-Abbasi/projectgreentrees.git"
+  },
+  "author": "Waqas Abbasi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Waqas-Abbasi/projectgreentrees/issues"
+  },
+  "homepage": "https://github.com/Waqas-Abbasi/projectgreentrees#readme"
+}
