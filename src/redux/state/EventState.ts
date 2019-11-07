@@ -9,7 +9,7 @@ export interface Event {
 }
 
 export interface EventState {
-	event: Event
+	events: Event[]
 }
 
 

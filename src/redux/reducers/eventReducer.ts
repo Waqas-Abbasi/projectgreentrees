@@ -11,13 +11,15 @@ const organisation: Organisation = {
 };
 
 const initialState: EventState = {
-	event: {
-		name: 'Trees For Change',
-		location: 'London, United Kingdom',
-		Time: new Date(),
-		participants: [],
-		organisation: organisation
-	}
+	events: [
+		{
+			name: 'Trees For Change',
+			location: 'London, United Kingdom',
+			Time: new Date(),
+			participants: [],
+			organisation: organisation
+		}
+	]
 };
 
 const eventReducer = (
