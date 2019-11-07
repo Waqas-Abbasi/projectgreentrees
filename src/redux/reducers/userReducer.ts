@@ -14,7 +14,6 @@ const userReducer = (
 ): UserState => {
 	switch (action.type) {
 		case 'REGISTER_USER':
-			state.user.name = 'Waqas';
 			return {...state};
 		default:
 			return {...state};

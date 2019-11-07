@@ -1,18 +1,23 @@
 import React from 'react';
 import '../styles/index.css';
 import {connect} from 'react-redux';
-import {registerUser} from '../redux/actions/userActions';
-import {User} from '../redux/state/UserState';
+import {registerUser, UserDispatchProps} from '../redux/actions/userActions';
+import {User, UserState} from '../redux/state/UserState';
+import {Action, bindActionCreators, Dispatch} from 'redux';
+import {UserActionTypes} from '../redux/actions/types/UserActionTypes';
 
-interface AppProps {
-	registerUser: (user: User) => void
+interface AppState {
+	user: User
 }
-class App extends React.Component<AppProps, void> {
+
+type AppProps =  UserDispatchProps;
+
+class App extends React.Component<AppProps, AppState> {
 	registerForm = () => {
 		this.props.registerUser({
 			name: 'Waqas',
 			email: 'test@gmail.com'
-		})
+		});
 	};
 
 	render() {
@@ -25,9 +30,15 @@ class App extends React.Component<AppProps, void> {
 	}
 }
 
-const mapDispatchToProps = {
-	registerUser: registerUser,
-}; 
+const mapStateToProps = (state: UserState, ownProps: AppProps) => ({
+	user: state.user
+});
 
-//TODO Add InterfaceTypes
-export default connect(null, mapDispatchToProps)(App);
+const mapDispatchToProps = (dispatch: Dispatch<Action<UserActionTypes>>) =>  bindActionCreators(
+	{
+		registerUser: registerUser,
+	},
+	dispatch
+);
+
+export default connect<UserState, UserDispatchProps , AppProps, AppState>(mapStateToProps, mapDispatchToProps)(App);
