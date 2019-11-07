@@ -10,7 +10,7 @@ interface AppState {
 	user: User
 }
 
-type AppProps =  UserDispatchProps;
+type AppProps = UserDispatchProps;
 
 class App extends React.Component<AppProps, AppState> {
 	registerForm = () => {
@@ -34,11 +34,12 @@ const mapStateToProps = (state: UserState, ownProps: AppProps) => ({
 	user: state.user
 });
 
-const mapDispatchToProps = (dispatch: Dispatch<Action<UserActionTypes>>) =>  bindActionCreators(
-	{
-		registerUser: registerUser,
-	},
-	dispatch
-);
+const mapDispatchToProps = (dispatch: Dispatch<Action<UserActionTypes>>) =>
+	bindActionCreators(
+		{
+			registerUser: registerUser,
+		},
+		dispatch
+	);
 
-export default connect<UserState, UserDispatchProps , AppProps, AppState>(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);
